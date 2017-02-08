@@ -47,9 +47,6 @@ class ImageDownloader
 
     public function __construct($urls)
     {
-        if (is_array($urls) === FALSE) {
-            $this->addError("Filelist is not array");
-        }
 
         $this->_urls = $urls;
     }
@@ -81,10 +78,11 @@ class ImageDownloader
      */
     public function download()
     {
-		if (is_array($this->_urls) === FALSE) {
+        if (is_array($this->_urls) === FALSE) {
+            $this->addError("Filelist is not array");
             return false;
         }
-		
+
         foreach ($this->_urls as $url) {
             if (!in_array(end(explode(".", $url)), $this->_extensions)) {
                 $this->addError("Wrong file extension");
@@ -151,7 +149,7 @@ class ImageDownloader
             $filepath = $this->_path . $this->_prefix . date('Y_m_d_H_i_s') . basename($url);
 
         }
-         $filename = basename($filepath);
+        $filename = basename($filepath);
 
         try {
 
@@ -179,9 +177,7 @@ class ImageDownloader
             $this->addError($e->getMessage());
         }
 
-        $this->_files[] = new FileModel($filename,$url);
-
-
+        $this->_files[] = new FileModel($filename, $url);
 
 
     }
