@@ -81,6 +81,10 @@ class ImageDownloader
      */
     public function download()
     {
+		if (is_array($this->_urls) === FALSE) {
+            return false;
+        }
+		
         foreach ($this->_urls as $url) {
             if (!in_array(end(explode(".", $url)), $this->_extensions)) {
                 $this->addError("Wrong file extension");
