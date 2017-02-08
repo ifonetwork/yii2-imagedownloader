@@ -1,0 +1,27 @@
+{
+  "name": "ifonetwork/yii2-imagedownloader",
+  "description": "The images downloader from remote url   for the Yii framework",
+  "type": "yii2-extension",
+  "keywords": ["yii2","extension"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Denis Rudenko",
+      "email": "rudenkodev@gmail.com"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Denis Rudenko",
+      "email": "rudenkodev@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ifonetwork\\imagedownloader\\": ""
+    }
+  }
+}
